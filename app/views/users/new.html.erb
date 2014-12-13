@@ -1,0 +1,24 @@
+<div class="sign-form group">  
+  <form class="new-user group" action="<%= users_url %>" method="POST">
+    <input
+      type="hidden"
+      name="authenticity_token"
+      value="<%= form_authenticity_token %>">
+
+    <label for="user_username">Username</label>
+    <input
+      type="text"
+      name="user[username]"
+      placeholder="Username"
+      id="user_username">
+
+    <label for="user_password">Password</label>
+    <input
+      type="password"
+      placeholder="Password"
+      name="user[password]"
+      id="user_password">
+      
+    <button>Sign Up</button>
+  </form>
+</div>

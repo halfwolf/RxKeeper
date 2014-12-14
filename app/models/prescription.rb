@@ -1,19 +1,25 @@
 class Prescription < ActiveRecord::Base
-  validates :user_id, :right_sph, :right_cyl, :right_axis, :left_sph, 
+  validates :user_id, :name, :right_sph, :right_cyl, :right_axis, :left_sph, 
             :left_cyl, :left_axis, presence: true
             
+  validates :right_axis, :left_axis, numericality: {
+    greater_than: 0, 
+    less_than_or_equal_to: 180
+  }   
   
   validate :sphere_values, :cylinder_values, :bc_values, :diam_values
+  
+  belongs_to :user
   
   private
   
   def contacts_check
-    invalid = true
+    valid = true
     if [right_bc, left_bc, right_diam, left_diam].any? {|val| val.nil?}
       errors[:contacts] << "can't have empty values" 
-      invalid = false
+      valid = false
     end
-    invalid
+    valid
   end
   
   def sphere_values

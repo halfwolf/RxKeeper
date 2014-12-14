@@ -8,7 +8,6 @@ class SessionController < ApplicationController
       params[:user][:username],
       params[:user][:password]
     )
-
     if @user.nil?
       flash.now[:errors] = ["Email or Password is Incorrect"]
       render :new

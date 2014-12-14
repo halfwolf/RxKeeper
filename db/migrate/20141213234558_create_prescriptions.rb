@@ -2,6 +2,7 @@ class CreatePrescriptions < ActiveRecord::Migration
   def change
     create_table :prescriptions do |t|
       t.integer :user_id, null: false
+      t.string :name, null: false
       
       t.decimal :right_sph, null: false, precision: 4, scale: 2
       t.decimal :right_cyl, null: false, precision: 4, scale: 2

@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20141213234558) do
 
   create_table "prescriptions", force: true do |t|
     t.integer  "user_id",                                            null: false
+    t.string   "name",                                               null: false
     t.decimal  "right_sph",  precision: 4, scale: 2,                 null: false
     t.decimal  "right_cyl",  precision: 4, scale: 2,                 null: false
     t.integer  "right_axis",                                         null: false

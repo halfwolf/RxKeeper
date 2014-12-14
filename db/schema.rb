@@ -11,10 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141213231402) do
+ActiveRecord::Schema.define(version: 20141213234558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "prescriptions", force: true do |t|
+    t.integer  "user_id",                                            null: false
+    t.decimal  "right_sph",  precision: 4, scale: 2,                 null: false
+    t.decimal  "right_cyl",  precision: 4, scale: 2,                 null: false
+    t.integer  "right_axis",                                         null: false
+    t.decimal  "right_bc",   precision: 2, scale: 1
+    t.decimal  "right_diam", precision: 3, scale: 1
+    t.decimal  "left_sph",   precision: 4, scale: 2,                 null: false
+    t.decimal  "left_cyl",   precision: 4, scale: 2,                 null: false
+    t.integer  "left_axis",                                          null: false
+    t.decimal  "left_bc",    precision: 2, scale: 1
+    t.decimal  "left_diam",  precision: 3, scale: 1
+    t.boolean  "contacts",                           default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "username",        null: false

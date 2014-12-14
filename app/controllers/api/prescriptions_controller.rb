@@ -13,7 +13,5 @@ class PrescriptionsController < ApplicationController
   
   def destroy
   end
-  
-
 
 end

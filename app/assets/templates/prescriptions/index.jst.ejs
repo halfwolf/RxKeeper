@@ -1,0 +1,5 @@
+<h1>Your Prescriptions</h1>
+
+<% prescriptions.forEach( function(scrip) { %>
+  <li> <%= scrip.escape("name") %></li>
+  <% }); %>

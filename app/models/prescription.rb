@@ -59,4 +59,4 @@ class Prescription < ActiveRecord::Base
 end
 
 
-#  { user_id: 1, right_sph: 10, right_cyl: 10, right_axis: 100, left_sph: 10, left_cyl: 10, left_axis: 100 }
+#   

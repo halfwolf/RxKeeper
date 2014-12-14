@@ -21,8 +21,7 @@ class ApplicationController < ActionController::Base
 
   def require_user!
     if current_user.nil?
-      flash.now[:errors] = ["You must be logged in to do that!"]
-      redirect_to new_session_url
+      render json: { authorized: false }
     end
   end
   

@@ -1,0 +1,18 @@
+<div class="rx-value">
+
+  <label for="=<%= side %>_bc">Base Curve</label>
+  <select name="prescription[<%= side %>_bc]" id="<%= side %>_bc">
+    <% for(var i = 70 ; i <= 90; i += 1 ) { %>
+      <option value="<%= i / 10 %>"><%= i / 10 %></option>
+    <% } %>
+  </select>
+</div>
+<div class="rx-value">
+
+  <label for="<%= side %>_diam">Diameter</label>
+  <select name="prescription[<%= side %>_diam]" id="<%= side %>_diam">
+      <% for(var i = 130 ; i <= 150; i += 1 ) { %>
+        <option value="<%= i / 10%>"><%= i / 10%></option>
+      <% } %> 
+  </select>
+</div>

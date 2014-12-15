@@ -1,5 +1,42 @@
 <h1>Your Prescriptions</h1>
+<% if (prescriptions.length >= 1 ) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Prescription Name</th>
+        <th>Sphere</th>
+        <th>Cylinder</th>
+        <th>Axis</th>
+        <th>Base Curve</th>
+        <th>Diameter</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% prescriptions.forEach( function(scrip) { %>
+      <tr>
+        <td> <%= scrip.escape("name") %></td>
+        <td> <%= scrip.escape("left_sph") %> / 
+             <%= scrip.escape("right_sph") %> </td>
+        <td> <%= scrip.escape("left_cyl") %> /
+             <%= scrip.escape("right_cyl") %> </td>
+        <td> <%= scrip.escape("left_axis") %> /
+             <%= scrip.escape("right_axis") %> </td>
+        <% if (scrip.attributes.contacts) { %>
+          <td> <%= scrip.escape("left_bc") %> /
+               <%= scrip.escape("right_bc") %> </td>
+           <td> <%= scrip.escape("left_diam") %> /
+                <%= scrip.escape("right_diam") %> </td>
+        <% } else { %>
+          <td> N/A </td>
+          <td> N/A </td>
+        <% } %>
+        <td><button id="<%= scrip.escape("id") %>">Delete</button></td>
+      </tr>
+    <% }); %>
+  </tbody>
+  </table>
+<% } else { %>
+  <h3>You don't have any prescriptions!</h3>
+<% } %>
 
-<% prescriptions.forEach( function(scrip) { %>
-  <li> <%= scrip.escape("name") %></li>
-  <% }); %>
+<a href="#/prescriptions/new">New Rx</a>

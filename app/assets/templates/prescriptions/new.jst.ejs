@@ -1,0 +1,93 @@
+<h1>Add new prescription...</h1>
+<div class="rx-errors"></div>
+<form class="new-prescription group">
+  
+  <div class="rx-basics group">
+    <label for="name" class="rx-name">Prescription Name</label>
+    <input type="text"
+      name="prescription[name]"
+      maxlength=18
+      id="name"></input>
+    
+    
+    <h1>Glasses or Contacts?</h1>
+    <input type="radio" 
+      name="prescription[contacts]"
+      id="glasses"
+      <% if (!contacts) { %> checked <% } %>  
+      value="false">
+      <label for="glasses" class="rx-type">Glasses</label>
+  
+    <input type="radio" 
+      name="prescription[contacts]"
+      id="contacts" 
+      <% if (contacts) { %> checked <% } %>  
+      value="true">
+      <label for="contacts" class="rx-type">Contacts</label>
+  </div>
+  
+  <div class="rx-values group">
+    
+    <div class="rx-one-eye group">
+      <h1>Right Eye</h1>
+      <div class="rx-value">
+        <label for="right_sphere">Sphere</label>
+        <select name="prescription[right_sph]" id="right_sphere">
+          <% for(var i = -10.0 ; i <= 10; i += 0.25 ) { %>
+            <option value="<%= i %>"><%= i %></option>
+          <% } %>
+        </select>
+      </div>
+    
+      <div class="rx-value">
+        <label for="right_cylinder">Cylinder</label>
+        <select name="prescription[right_cyl]" id="right_cylinder">
+          <% for(var i = -10.0 ; i <= 10; i += 0.25 ) { %>
+            <option value="<%= i %>"><%= i %></option>
+          <% } %>
+        </select>
+      </div>
+  
+      <div class="rx-value">
+        <label for="right_axis">Axis</label>
+        <input type="number" name="prescription[right_axis]" id="right_axis"
+          min=1 max=180>
+      </div>
+    
+      <div class="contact-form-right group"></div>
+    </div>
+    
+    <div class="rx-one-eye group">
+      <h1>Left Eye</h1>
+      
+      <div class="rx-value">
+        <label for="left_sphere">Sphere</label>
+        <select name="prescription[left_sph]" id="left_sphere">
+          <% for(var i = -10.0 ; i <= 10; i += 0.25 ) { %>
+            <option value="<%= i %>"><%= i %></option>
+          <% } %>
+        </select>
+      </div>
+
+      <div class="rx-value">
+        <label for="left_cylinder">Cylinder</label>
+        <select name="prescription[left_cyl]" id="left_cylinder">
+          <% for(var i = -10.0 ; i <= 10; i += 0.25 ) { %>
+            <option value="<%= i %>"><%= i %></option>
+          <% } %>
+        </select>
+      </div>
+
+      <div class="rx-value">
+        <label for="left_axis">Axis</label>
+        <input type="number" name="prescription[left_axis]" id="left_axis"
+          min=1 max=180>
+      </div>
+    
+      <div class="contact-form-left"></div>
+    </div>
+  </div>
+    
+<button>Add Rx</button>
+</form>
+

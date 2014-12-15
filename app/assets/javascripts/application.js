@@ -20,3 +20,9 @@
 //= require_tree ./collections
 //= require_tree ./views
 //= require_tree ./routers
+  
+// Rails CSRF Protection
+$(document).ajaxSend(function (e, xhr, options) {
+  var token = $("meta[name='csrf-token']").attr("content");
+  xhr.setRequestHeader("X-CSRF-Token", token);
+});

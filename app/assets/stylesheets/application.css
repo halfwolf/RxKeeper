@@ -13,3 +13,382 @@
  *= require_tree .
  *= require_self
  */
+
+h1, h2, h3, h4, h5, h6, ul, li, div, p, a, button, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+}
+
+html, body {
+  font-family: "Nunito";
+  background-color: white;
+  height: 100%;
+  background: #D6EAFE;
+}
+
+html {
+  
+}
+
+.group:after {
+content: "";
+display: block;
+clear: both;
+}
+
+nav {
+  border-bottom: 1px solid #A5A5A5;
+  background: white;
+}
+
+.nav-content {
+  width: 750px;
+  margin: auto;
+}
+
+.nav-content > h4 {
+  font-size: 24px;
+  float: left;
+  color: #00439A;
+  padding: 10px;
+  font-weight: 400;
+}
+
+.nav-content > h5 {
+  font-size: 16px;
+  float: right;
+  color: #00479B;
+  margin-top: 12px;
+  margin-right: 10px;
+  padding: 5px 0;
+  font-weight: 400;
+}
+
+.nav-content > a, input.logout-header {
+  background: white;
+  display: block;
+  font-size: 14px;
+  float: right;
+  color: #00479B;
+  margin-top: 12px;
+  margin-left: 10px;
+  padding: 5px 0;
+  width: 100px;
+  font-weight: 300;
+  border: 1px solid #00479B;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.nav-content > a:hover, input.logout-header:hover {
+  color: white;
+  background-color: #00479B;
+  transition: .4s;
+}
+
+/* prescriptions */
+
+#content {
+  width: 750px;
+  min-height: 600px;
+  margin: auto;
+  background: #D6EAFE;
+  height: 100%;
+  color: #4E4E4E;
+}
+
+.prescription-index > h1 {
+  font-size: 36px;
+  padding: 25px 35px;
+  text-align: center;
+}
+
+.prescription-index > table {
+  margin-left: 35px;
+  font-weight: 300;
+  border-collapse: collapse;
+}
+
+.prescription-index > a {
+  display: block;
+  text-align: center;
+  margin: 25px 35px;
+  padding: 5px;
+  width: 100px;
+  color: white;
+  font-weight: 300;
+  border: 1px solid #F46100;
+  border-radius: 4px;
+  background: #F46100;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.4),inset 1px 1px 0px rgba(255,255,255,0.4);
+}
+.prescription-index > a:active {
+   box-shadow: 0 0px 0px rgba(0,0,0,0.4),inset 0px 0px 0px rgba(255,255,255,0.4);
+}
+
+thead > * {
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+td > button {
+  margin-left: 20px;
+  padding: 2px 5px;
+  background: #f4f4f4;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.4),inset 1px 1px 0px rgba(255,255,255,0.4);
+}
+td > button:focus {
+  outline: 0;
+}
+
+td > button:active {
+  decoration: none;
+  box-shadow: 0 0px 0px rgba(0,0,0,0.4),inset 0px 0px 0px rgba(255,255,255,0.4);
+}
+
+th, td {
+  padding: 10px 5px;
+  text-align: center;
+}
+
+td:first-child {
+  font-weight: 400;
+}
+
+/* Prescription Form */
+
+.new-prescription {
+  font-weight: 300;
+}
+
+.prescription-form > h1 {
+  font-size: 36px;
+  padding: 30px 25px 30px;
+}
+
+.rx-basics {
+  float: left;
+  width: 175px;
+  padding-left: 25px;
+}
+
+.rx-basics > label.rx-name {
+  font-size: 20px;
+  padding: 5px 0;
+  display: block;
+}
+
+.rx-basics > input[type=radio] {
+  display: block;
+  width: 25px;
+  height: 40px;
+  float: left;
+}
+
+.rx-basics > h1 {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.rx-basics > label.rx-type {
+  font-size: 20px;
+  width: 125px;
+  float: left;
+  height: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.rx-basics > input[type=text] {
+  width: 150px;
+  font-size: 16px;
+  font-weight: 300;
+  border-radius: 0;
+  font-family: "Nunito";
+  outline: 0;
+  height: 30px;
+  padding: 0 8px;
+  border: 1px solid #a5a5a5;
+  color: #4e4e4e;
+}
+
+.new-prescription > button {
+  float: left;
+  display: block;
+  text-align: center;
+  margin: 25px 50px;
+  padding: 5px;
+  width: 100px;
+  color: white;
+  font-weight: 300;
+  border: 1px solid #F46100;
+  border-radius: 4px;
+  background: #F46100;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.4),inset 1px 1px 0px rgba(255,255,255,0.4);
+}
+
+.rx-values {
+  border: 1px solid #D3D3D3;
+  float: right;
+  width: 500px;
+  margin-right: 40px  ;
+}
+
+.rx-value {
+  float: left;
+  width: 150px;
+  margin-top: 10px;
+}
+
+.rx-value * {
+  width: 150px;
+  float: left;
+}
+
+.rx-one-eye {
+  width: 500px;
+  float: left;
+  margin: 20px 30px 0;
+}
+
+.rx-one-eye > h1 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.rx-one-eye:last-of-type {
+  margin-bottom: 20px;
+}
+
+.rx-value > input, .rx-value > select {
+  width: 100px;
+  font-size: 16px;
+  font-weight: 300;
+  border-radius: 0;
+  font-family: "Nunito";
+  outline: 0;
+  height: 40px;
+  padding: 0 8px;
+  border: 1px solid #a5a5a5;
+  color: #4e4e4e;
+}
+
+.contact-form-right, .contact-form-left {
+  float: left;
+}
+
+.rx-errors > li {
+  width: 200px;
+  text-align: center;
+  background: #e5675a;
+  color: white;
+  font-size: 14px;
+  padding: 5px;
+  margin: 0 auto 5px;
+  border-radius: 3px;
+  opacity: .8;
+}
+
+/* Login / Sign Up form */
+
+.user-sign-in {
+  height: 100%;
+  background: #D6EAFE;
+}
+
+form.new-user {
+  width: 200px;
+  margin: auto;
+  padding-top: 35px;
+}
+
+form.new-user > * {
+  
+  float: left;
+  width: 150px;
+}
+
+.new-user > input {
+  font-family: "Nunito";
+  border: 1px solid #A5A5A5;
+  margin: 5px 25px;
+  height: 40px;
+  font-size: 22px;
+  font-weight: 300;  
+  
+}
+
+button.login {
+  float: left;
+  display: block;
+  text-align: center;
+  margin: 25px 50px;
+  padding: 5px;
+  width: 100px;
+  color: white;
+  font-weight: 300;
+  border: 1px solid #00439A;
+  border-radius: 4px;
+  background: #00439A;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.4),inset 1px 1px 0px rgba(255,255,255,0.4);
+}
+
+
+.log-errors > li {
+  width: 250px;
+  margin: auto;
+  text-align: center;
+  padding-top: 10px;
+}
+
+/* Home Page */
+
+.home-page > h1 {
+  padding-top: 15px;
+  font-size: 48px;
+  text-align: center;
+  display: block;
+}
+
+.home-page > h2 {
+  text-align: center;
+  display: block;
+  line-height: 50%;
+  font-size: 36px;
+}
+
+.home-page > p {
+  padding-top: 20px;
+  width: 500px;
+  margin: auto;
+  font-weight: 300;
+}
+
+.home-page > a {
+  display: block;
+  text-align: center;
+  margin: 50px auto;
+  padding: 5px;
+  width: 100px;
+  color: white;
+  font-weight: 300;
+  border: 1px solid #00439A;
+  border-radius: 4px;
+  background: #00439A;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.4),inset 1px 1px 0px rgba(255,255,255,0.4);
+}
+
+
+
+
+
+
+

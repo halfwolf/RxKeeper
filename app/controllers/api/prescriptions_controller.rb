@@ -37,5 +37,14 @@ class Api::PrescriptionsController < ApplicationController
     @prescription.try(:destroy)
     render json: {}
   end
+  
+  private
+  
+  def prescription_params
+    params.require(:prescription).permit(:name, :contacts, :right_sph, :right_cyl, :right_axis, 
+                                        :right_bc, :right_diam, :left_sph, 
+                                        :left_cyl, :left_axis, 
+                                        :left_bc, :left_diam)
+  end
 
 end

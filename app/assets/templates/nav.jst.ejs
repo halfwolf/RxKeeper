@@ -1,0 +1,8 @@
+<h4><a href="/">Rx Keeper</a></h4>
+<% if (username) { %>
+<a href="#/signout" class="logout-button">Logout</a>
+  <h5><a href="#/prescriptions"><%= username %></a></h5>
+<% } else { %>
+  <a href="#/login">Sign In</a>
+  <a href="#/signup">Sign Up</a>
+<% } %>

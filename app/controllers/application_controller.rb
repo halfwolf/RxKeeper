@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
 
   def require_user!
     if current_user.nil?
-      render json: { authorized: false }
+      render json: [{ unauthorized: true }]
     end
   end
   
